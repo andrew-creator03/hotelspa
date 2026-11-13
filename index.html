@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOVA ALPINE — Private Hotel & SPA</title>
+<meta name="description" content="NOVA ALPINE — a private hotel & spa between the mountains and the moment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a href="#" class="nav-brand">NOVA ALPINE</a>
+  <ul class="nav-links">
+    <li><a href="#rooms">ROOMS</a></li>
+    <li><a href="#spa">SPA</a></li>
+    <li><a href="#experiences">EXPERIENCES</a></li>
+    <li><a href="#gallery">GALLERY</a></li>
+    <li><a href="#location">LOCATION</a></li>
+  </ul>
+  <a href="#booking" class="nav-book">BOOK NOW</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">×</button>
+  <ul class="mobile-links">
+    <li><a href="#rooms">ROOMS</a></li>
+    <li><a href="#spa">SPA</a></li>
+    <li><a href="#experiences">EXPERIENCES</a></li>
+    <li><a href="#gallery">GALLERY</a></li>
+    <li><a href="#location">LOCATION</a></li>
+    <li><a href="#booking">BOOK NOW</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=2400&q=85" alt="Nova Alpine mountain resort at evening">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">NOVA ALPINE</span>
+    <span class="hero-subtitle">PRIVATE HOTEL & SPA</span>
+    <h1 class="hero-title">Stay somewhere<br><em>unforgettable.</em></h1>
+    <div class="hero-cta">
+      <a href="#rooms" class="btn btn-outline-light">EXPLORE ROOMS</a>
+      <a href="#booking" class="btn btn-solid-light">BOOK YOUR STAY</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>SCROLL</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- ROOMS -->
+<section class="rooms-section" id="rooms">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-label">ACCOMMODATION</span>
+      <h2 class="section-title">Rooms & Suites</h2>
+      <p class="section-desc">Fourteen private rooms, each designed as a quiet retreat from the world below.</p>
+    </div>
+    <div class="rooms-grid" id="roomsGrid"></div>
+  </div>
+</section>
+
+<!-- SPA -->
+<section class="spa-section" id="spa">
+  <div class="spa-grid">
+    <div class="spa-image reveal">
+      <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=1600&q=85" alt="SPA ritual">
+    </div>
+    <div class="spa-content reveal">
+      <span class="section-label">THE SPA</span>
+      <h2 class="section-title">Slow down.<br><em>Your body has been waiting.</em></h2>
+      <p class="spa-desc">Our thermal suite, private treatment rooms and mountain-facing sauna are open to guests from dawn until late evening.</p>
+      <div class="spa-controls">
+        <button class="spa-arrow" id="spaPrev" aria-label="Previous">←</button>
+        <button class="spa-arrow" id="spaNext" aria-label="Next">→</button>
+      </div>
+    </div>
+  </div>
+  <div class="spa-track" id="spaTrack"></div>
+</section>
+
+<!-- EXPERIENCES -->
+<section class="experiences-section" id="experiences">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-label">CURATED</span>
+      <h2 class="section-title">Experiences</h2>
+      <p class="section-desc">Small moments, carefully arranged. Choose what your stay should feel like.</p>
+    </div>
+    <div class="exp-grid" id="expGrid"></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section" id="gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-label">GALLERY</span>
+      <h2 class="section-title">Inside Nova Alpine</h2>
+    </div>
+    <div class="gallery-masonry" id="galleryMasonry"></div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking-section" id="booking">
+  <div class="container">
+    <div class="booking-inner reveal">
+      <span class="section-label">RESERVATIONS</span>
+      <h2 class="section-title">Reserve your stay.</h2>
+      <p class="section-desc">Check availability for your dates. Our reservations team will be in touch within the hour.</p>
+      <form class="booking-form" id="bookingForm">
+        <div class="booking-fields">
+          <div class="bf-group">
+            <label>CHECK-IN</label>
+            <input type="date" id="checkIn" required>
+          </div>
+          <div class="bf-group">
+            <label>CHECK-OUT</label>
+            <input type="date" id="checkOut" required>
+          </div>
+          <div class="bf-group">
+            <label>GUESTS</label>
+            <select id="guests">
+              <option>1 Guest</option>
+              <option selected>2 Guests</option>
+              <option>3 Guests</option>
+              <option>4 Guests</option>
+            </select>
+          </div>
+          <div class="bf-group bf-group-wide">
+            <label>ROOM</label>
+            <select id="roomSelect">
+              <option value="any">Any available room</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-solid-dark">CHECK AVAILABILITY</button>
+      </form>
+      <div class="booking-result" id="bookingResult"></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location-section" id="location">
+  <div class="container">
+    <div class="location-grid">
+      <div class="location-info reveal">
+        <span class="section-label">LOCATION</span>
+        <h2 class="section-title">Between mountains<br><em>and the moment.</em></h2>
+        <p class="location-desc">A quiet corner of the Alps, forty-five minutes from the nearest airport, twelve from the old town, and eight from the nearest mountain trail.</p>
+        <div class="distances">
+          <div class="distance"><span class="dist-num">45</span><span class="dist-unit">min</span><span class="dist-label">Airport</span></div>
+          <div class="distance"><span class="dist-num">12</span><span class="dist-unit">min</span><span class="dist-label">Old Town</span></div>
+          <div class="distance"><span class="dist-num">8</span><span class="dist-unit">min</span><span class="dist-label">Mountain Trail</span></div>
+          <div class="distance"><span class="dist-num">5</span><span class="dist-unit">min</span><span class="dist-label">Lake</span></div>
+        </div>
+        <a href="#" class="btn btn-outline-dark" onclick="event.preventDefault();showToast('Interactive map coming soon')">EXPLORE THE AREA</a>
+      </div>
+      <div class="location-map reveal">
+        <div class="map-art">
+          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#B8935A" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#B8935A" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <circle cx="200" cy="200" r="180" fill="url(#glow)"/>
+            <circle cx="200" cy="200" r="120" fill="none" stroke="#B8935A" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="200" cy="200" r="80" fill="none" stroke="#B8935A" stroke-width="0.5" opacity="0.6"/>
+            <circle cx="200" cy="200" r="40" fill="none" stroke="#B8935A" stroke-width="0.5" opacity="0.8"/>
+            <circle cx="200" cy="200" r="6" fill="#B8935A"/>
+            <line x1="80" y1="200" x2="320" y2="200" stroke="#B8935A" stroke-width="0.5" opacity="0.3" stroke-dasharray="2 4"/>
+            <line x1="200" y1="80" x2="200" y2="320" stroke="#B8935A" stroke-width="0.5" opacity="0.3" stroke-dasharray="2 4"/>
+            <text x="200" y="60" text-anchor="middle" fill="#B8935A" font-family="Inter,sans-serif" font-size="9" letter-spacing="2">N</text>
+            <text x="340" y="204" text-anchor="middle" fill="#B8935A" font-family="Inter,sans-serif" font-size="9" letter-spacing="2">E</text>
+            <text x="200" y="352" text-anchor="middle" fill="#B8935A" font-family="Inter,sans-serif" font-size="9" letter-spacing="2">S</text>
+            <text x="60" y="204" text-anchor="middle" fill="#B8935A" font-family="Inter,sans-serif" font-size="9" letter-spacing="2">W</text>
+          </svg>
+        </div>
+        <div class="map-label">NOVA ALPINE · 46.8°N, 8.2°E</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">NOVA ALPINE</div>
+        <p class="footer-tagline">"Your place between the mountains<br>and the moment."</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <span class="footer-col-title">RESERVATIONS</span>
+          <a href="tel:+000000000">+00 000 000 000</a>
+          <a href="mailto:stay@novaalpine.com">stay@novaalpine.com</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">EXPLORE</span>
+          <a href="#rooms">ROOMS</a>
+          <a href="#spa">SPA</a>
+          <a href="#experiences">EXPERIENCES</a>
+          <a href="#location">LOCATION</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">FOLLOW</span>
+          <a href="#" onclick="event.preventDefault()">INSTAGRAM</a>
+          <a href="#" onclick="event.preventDefault()">PINTEREST</a>
+          <a href="#" onclick="event.preventDefault()">PRIVACY</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 NOVA ALPINE</span>
+      <span>MADE WITH QUIET INTENTION</span>
+    </div>
+  </div>
+</footer>
+
+<!-- AI CONCIERGE — FLOATING TRIGGER -->
+<button class="concierge-trigger" id="conciergeTrigger" aria-label="Open AI Concierge">
+  <span class="concierge-avatar-mini">
+    <span class="avatar-glow"></span>
+    <span class="avatar-core"></span>
+  </span>
+  <span class="concierge-pulse"></span>
+  <span class="concierge-tooltip">Aria · Your Concierge</span>
+</button>
+
+<!-- AI CONCIERGE — MODAL -->
+<div class="concierge-modal" id="conciergeModal" aria-hidden="true">
+  <div class="concierge-backdrop" id="conciergeBackdrop"></div>
+  <div class="concierge-panel" role="dialog" aria-modal="true">
+    <div class="concierge-header">
+      <div class="concierge-avatar-large">
+        <span class="avatar-glow"></span>
+        <span class="avatar-core"></span>
+      </div>
+      <div class="concierge-identity">
+        <span class="concierge-name">Aria</span>
+        <span class="concierge-status"><span class="status-dot"></span> Online · Your Concierge</span>
+      </div>
+      <button class="concierge-close" id="conciergeClose" aria-label="Close">×</button>
+    </div>
+    <div class="concierge-body" id="conciergeBody"></div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose">×</button>
+  <button class="lightbox-prev" id="lightboxPrev">←</button>
+  <button class="lightbox-next" id="lightboxNext">→</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+</div>
+
+<!-- ROOM DETAIL MODAL -->
+<div class="room-modal" id="roomModal" aria-hidden="true">
+  <div class="room-modal-backdrop" id="roomModalBackdrop"></div>
+  <div class="room-modal-panel">
+    <button class="room-modal-close" id="roomModalClose">×</button>
+    <div class="room-modal-content" id="roomModalContent"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
